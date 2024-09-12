@@ -29,7 +29,7 @@ models = ["GISS-E2-1-G", "GFDL-ESM4", "FIO-ESM-2-0", "EC-Earth3-Veg", "CMCC-ESM2
           "BCC-CSM2-MR", "ACCESS-CM2", "MPI-ESM1-2-HR", "INM-CM5-0", "HadGEM3-GC31-LL",
           "MRI-ESM2-0", "MIROC6", "UKESM1-0-LL"]
 
-ssp_type = "ssp126"
+ssp_type = "ssp245"
 start_year = 2021
 end_year = 2040
 

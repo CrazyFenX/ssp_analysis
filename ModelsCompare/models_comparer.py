@@ -27,10 +27,11 @@ class ModelsComparer:
 
     def models_compare(self, folder, project_dir, data_type, ssp_type, start_year, end_year):
         folder_path = os.path.abspath(folder)  # Получение абсолютного пути к папке
-
+        print(folder_path)
         full_df = pd.DataFrame()
 
         for model in self.models:
+            # tmp_df = pd.read_csv(input_dir + "\\" + f"\\wc2.1_2.5m_{data_type}_{model}_{ssp_type}_{start_year}-{end_year}.csv")
             tmp_df = pd.read_csv(project_dir + "\\" + folder + f"\\wc2.1_2.5m_{data_type}_{model}_{ssp_type}_{start_year}-{end_year}.csv")
             # Слияние DataFrame
             full_df = pd.concat([full_df, tmp_df])
@@ -56,6 +57,7 @@ class ModelsComparer:
                 if len(full_df[(full_df['NAME_EN'] == zone_name) & (full_df[month] == median_value)]["model"].values) > 1:
                     model_median = full_df[(full_df['NAME_EN'] == zone_name) & (full_df[month] == median_value)]["model"].values
                 else:
+                    print(full_df[(full_df['NAME_EN'] == zone_name) & (full_df[month] == median_value)]["model"].values)
                     model_median = full_df[(full_df['NAME_EN'] == zone_name) & (full_df[month] == median_value)]["model"].values[0]
 
                 if len(full_df[(full_df['NAME_EN'] == zone_name) & (full_df[month] == min_value)]["model"].values) > 1:
